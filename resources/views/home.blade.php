@@ -19,9 +19,11 @@
                 <th>Registered At</th>
                 <th>Manage</th>
             </tr>
+            <?php $iterator = 0; ?>
             @foreach ($users as $key => $value)
+                <?php $iterator++; ?>
                 <tr>
-                    <td width="50px">{{$key+1}}</td>
+                    <td width="50px">{{$iterator}}</td>
                     <td>{{$value['name']}}</td>
                     <td>{{$value['email']}}</td>
                     {{--Filter createdAt field: --}}
