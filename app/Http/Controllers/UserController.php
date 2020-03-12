@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+// Include global DB class:
+use DB;
 
 class UserController extends Controller
 {
@@ -74,14 +76,12 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
+    // Destroy function ==  Delete function
+    public function destroy($id)
     {
-        //
+        // table('users'), // where clause ('id') (action->delete)
+        User::find($id)->delete();
+        // return to home index action:
+        return redirect()->action('UserController@index');
     }
 }

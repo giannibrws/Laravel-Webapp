@@ -41,10 +41,18 @@
                     <td>{{substr($value['created_at'], 0, strpos($value['created_at'], "T"))}}</td>
                     <td width="200px">
                         <a href="#" class="btn btn-success">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        {{--@info: Verzend een form action naar de userController destroy function & geef het id mee--}}
+                        {{$test = $value['id'] }}
+                        <form method="POST" action="{{ action('UserController@destroy', $value['id']) }}">
+                            {{method_field("DELETE")}}
+                            {{csrf_field()}}
+                            <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
+
+
 
         </table>
 

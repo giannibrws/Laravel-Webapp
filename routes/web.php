@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 // Redirect to userController index function:
 Route::get('/home', 'UserController@index')->name('home');
+
+// Assign crud routes to userController:
+Route::resource('User', 'UserController');
