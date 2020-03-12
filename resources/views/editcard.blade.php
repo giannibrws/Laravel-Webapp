@@ -18,7 +18,8 @@
               <input id="name" type="text" value="" name="name">
             </div>
             <div class="col-5 text-center my-auto">
-              <input type="submit" value="Confirm" class="btn btn-success">
+              <input type="submit" value="Confirm" class="btn btn-success first">
+              <a href="{{ route('home') }}"><button class="btn btn-danger">Cancel</button></a>
             </div>
         </div>
     </form>

@@ -16,13 +16,12 @@
                 <th width="50px">#</th>
                 <th width="200px">Username</th>
                 <th>Email</th>
-                <th>Registered At:</th>
-                <th>Manage:</th>
+                <th>Registered At</th>
+                <th>Manage</th>
             </tr>
             @foreach ($users as $key => $value)
-
                 <tr>
-                    <td width="50px">{{$value['id']}}</td>
+                    <td width="50px">{{$key+1}}</td>
                     <td>{{$value['name']}}</td>
                     <td>{{$value['email']}}</td>
                     {{--Filter createdAt field: --}}
@@ -33,7 +32,7 @@
                         <form method="POST" action="{{ action('UserController@destroy', $value['id']) }}">
                             {{method_field("DELETE")}}
                             {{csrf_field()}}
-                            <button type="submit" value="delete" class="btn btn-danger manage">Delete</button>
+                            <button value="delete" class="btn btn-danger manage">Delete</button>
                         </form>
                     </td>
                 </tr>

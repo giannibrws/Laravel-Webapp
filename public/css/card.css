@@ -9,8 +9,12 @@ input[type=text] {
   width: 80%;
 }
 
-input[type=submit] {
-  height: 50px;
+button, input[type=submit] {
+  height: 45px;
   width: 50%;
   line-height: 50%;
+}
+
+.first {
+  margin-bottom: 10px;
 }
