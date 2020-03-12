@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 // Redirect to userController index function:
 Route::get('/home', 'UserController@index')->name('home');
+Route::get('/create', 'HomeController@create')->name('create');
+Route::get('/edit', 'HomeController@edit')->name('edit');
