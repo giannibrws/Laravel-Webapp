@@ -1,0 +1,11 @@
+input[type=button] {
+  height: 50px;
+  width: 75%;
+  margin-top: 3%;
+}
+
+.manage {
+  width: 48%;
+  height: 20px;
+  line-height: 6px;
+}

@@ -1,0 +1,16 @@
+label, input[type=text] {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+input[type=text] {
+  margin-bottom: 1%;
+  width: 80%;
+}
+
+input[type=submit] {
+  height: 50px;
+  width: 50%;
+  line-height: 50%;
+}
