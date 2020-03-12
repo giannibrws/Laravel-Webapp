@@ -9,3 +9,7 @@ input[type=button] {
   height: 20px;
   line-height: 6px;
 }
+
+form {
+  display: inline;
+}

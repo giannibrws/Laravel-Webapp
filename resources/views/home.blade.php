@@ -28,18 +28,13 @@
                     {{--Filter createdAt field: --}}
                     <td width=135px>{{substr($value['created_at'], 0, strpos($value['created_at'], "T"))}}</td>
                     <td width="200px">
-                        <a href="#" class="btn btn-success">Edit</a>
+                        <a href="{{ route('edit') }}" class="btn btn-success manage">Edit</a>
                         {{--@info: Verzend een form action naar de userController destroy function & geef het id mee--}}
-                        {{$test = $value['id'] }}
                         <form method="POST" action="{{ action('UserController@destroy', $value['id']) }}">
                             {{method_field("DELETE")}}
                             {{csrf_field()}}
-                            <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                            <button type="submit" value="delete" class="btn btn-danger manage">Delete</button>
                         </form>
-
-                        <a href="{{ route('edit') }}" class="btn btn-success manage">Edit</a>
-                        <a href="#" class="btn btn-danger manage">Delete</a>
-
                     </td>
                 </tr>
             @endforeach
