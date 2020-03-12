@@ -9,7 +9,9 @@
   <div class="card">
     <div class="card-header">Create contact</div>
     <div class="card-body">
-    <form method="POST" action="">
+    <form method="POST" action="{{ action('UserController@store') }}">
+        {{--// Add validation token to form--}}
+        {{csrf_field()}}
         <div class="row">
             <div class="col-7">
               <label for="email">E-Mail</label>

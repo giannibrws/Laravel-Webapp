@@ -30,17 +30,20 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    // @info: Saves a new user record to the database:
+    public function store()
     {
-        //
-    }
+        $user = new User();
+        $user->email = request('email');
+        $user->name = request('name');
+        $user->password = "default";
 
+        // Store file:
+        $user->save();
+        // return to home index action:
+        return redirect()->action('UserController@index');
+
+    }
 
     /**
      * Display the specified resource.
