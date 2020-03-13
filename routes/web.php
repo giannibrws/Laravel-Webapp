@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 // Redirect to userController index function:
+
+
+
 Route::get('/home', 'UserController@index')->name('home');
 
 

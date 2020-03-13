@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 // Include global DB class:
 use DB;
+use Auth;
 
 class UserController extends Controller
 {
@@ -16,8 +17,14 @@ class UserController extends Controller
      */
     public function index()
     {
-      $users = User::paginate(15);
-      return view('home', ['users'=>$users]);
+        // add user authentication:
+        if(Auth::check()){
+            $users = User::paginate(15);
+            return view('home', ['users'=>$users]);
+        }
+        else{
+            return view('auth/login');
+        }
     }
 
     /**
@@ -59,10 +66,14 @@ class UserController extends Controller
 
     public function edit($id)
     {
-
-        $user = User::find($id);
-        // return to home index action:
-        return view('editcard')->with('user', $user);
+        if(Auth::check()) {
+            $user = User::find($id);
+            // return to home index action:
+            return view('editcard')->with('user', $user);
+        }
+        else{
+            return view('auth/login');
+        }
     }
 
 
