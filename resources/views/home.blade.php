@@ -21,6 +21,12 @@
             </tr>
             <?php
             $iterator = 0;
+                if(isset($_GET['page'])){
+                    $currentPage = $_GET['page'];
+                    if($currentPage > 1){
+                        $iterator += (($currentPage - 1) * 15);
+                    }
+                }
             ?>
             @foreach ($users as $key => $value)
                 <?php $iterator++; ?>
