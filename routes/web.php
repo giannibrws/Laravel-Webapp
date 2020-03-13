@@ -24,6 +24,9 @@ Route::get('/home', 'UserController@index')->name('home');
 
 // Assign crud routes to userController:
 Route::resource('User', 'UserController');
+Route::resource('User/?', 'HomeController');
+Route::resource('Home', 'HomeController');
+
 Route::get('/create', 'HomeController@create')->name('create');
 Route::get('/edit', 'HomeController@edit')->name('edit');
 

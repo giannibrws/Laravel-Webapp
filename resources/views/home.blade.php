@@ -19,7 +19,9 @@
                 <th>Registered At</th>
                 <th>Manage</th>
             </tr>
-            <?php $iterator = 0; ?>
+            <?php
+            $iterator = 0;
+            ?>
             @foreach ($users as $key => $value)
                 <?php $iterator++; ?>
                 <tr>
@@ -27,9 +29,13 @@
                     <td>{{$value['name']}}</td>
                     <td>{{$value['email']}}</td>
                     {{--Filter createdAt field: --}}
-                    <td width=135px>{{substr($value['created_at'], 0, strpos($value['created_at'], "T"))}}</td>
+                    <td width=135px>{{date("Y.m.d", strtotime($value['created_at']))}}</td>
                     <td width="200px">
-                        <a href="{{ route('edit') }}" class="btn btn-success manage">Edit</a>
+                        <form method="PATCH" action="{{ action('UserController@edit', $value['id']) }}">
+                            {{csrf_field()}}
+                        <button value="edit" class="btn btn-success manage">Edit</button>
+                        </form>
+
                         {{--@info: Verzend een form action naar de userController destroy function & geef het id mee--}}
                         <form method="POST" action="{{ action('UserController@destroy', $value['id']) }}">
                             {{method_field("DELETE")}}

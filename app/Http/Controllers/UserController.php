@@ -56,27 +56,29 @@ class UserController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
+
+    public function edit($id)
     {
-        //
+
+        $user = User::find($id);
+        // return to home index action:
+        return view('editcard')->with('user', $user);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
+
+    public function update($id)
     {
-        //
+        // check om welke user het gaat:
+        $user = User::find($id);
+
+        // request change of details:
+        $user->email = request('email');
+        $user->name = request('name');
+
+        // Store file:
+        $user->save();
+        // return to home index action:
+        return redirect()->action('UserController@index');
     }
 
     // Destroy function ==  Delete function
