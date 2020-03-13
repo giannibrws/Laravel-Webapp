@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Inter|Sen:400,700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Sen', sans-serif;
+}
+
+.table th {
+  border: none;
+  padding-bottom: 0px;
+  text-align: left;
+  color: #227dc7;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 0.5px;
+  border: none;
+}
+
+.table tr {
+  padding: 0;
+  margin: 0;
+  height: 10px;
+}
+
+.table tr td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: none;
+}
+
+
+.table td {
+  border-left: none;
+  border-right: none;
+  background-color: none;
+  border-color: rgba(40,40,40,1);
+  color: white;
+}
+
+.table tr:last-child td {
+  border-bottom: 1px solid rgba(40,40,40,1);
+}
+
+.btn {
+  font-weight: bold;
+}
+
+body {
+  background-color: rgba(25,25,25,1);
+}
+
+.navbar-light {
+  background-color: rgba(20,20,20,1) !important;
+      color: white !important;
+}
+
+.navbar a {
+      color: #3490dc !important;
+}
+
+.page-link {
+  background-color: rgba(50,50,50,1);
+  border: 1px solid rgba(40,40,40,1);
+}
+
+.page-item.disabled .page-link {
+  background-color: rgba(50,50,50,1);
+  border: 1px solid rgba(40,40,40,1);
+}
+
+.page-link:hover {
+  background-color: rgba(65,65,65,1);
+  border: 1px solid rgba(40,40,40,1);
+}
+
+.dropdown-menu {
+  background-color: rgba(20,20,20,1);
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: rgba(255,255,255,0.6);
+}
+
+.card-header {
+  background-color: rgba(0,0,0,0);
+  text-align:center;
+  font-size: 21px;
+  color: #3490dc;
+  border-color: rgba(40,40,40,1);
+  font-family: 'Sen', sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 0;
+  color: rgba(255,255,255,0.6);
+}
+
+.form-check-inline {
+  padding-left: 1.5rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(25,25,25,1);
+}
+
+.register {
+  margin-top: 1.5rem;
+  width: 100%;
+}

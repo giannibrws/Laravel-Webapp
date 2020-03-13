@@ -39,7 +39,7 @@
                     <td width="200px">
                         <form method="PATCH" action="{{ action('UserController@edit', $value['id']) }}">
                             {{csrf_field()}}
-                        <button value="edit" class="btn btn-success manage">Edit</button>
+                        <button value="edit" class="btn btn-primary manage">Edit</button>
                         </form>
 
                         {{--@info: Verzend een form action naar de userController destroy function & geef het id mee--}}

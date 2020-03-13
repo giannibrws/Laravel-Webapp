@@ -18,7 +18,6 @@
               <input id="name" type="text" value="" name="name">
               <label for="email">E-Mail</label>
               <input id="email" type="text" value="" name="email">
-
             </div>
             <div class="col-5 text-center my-auto">
               <input type="submit" value="Confirm" class="btn btn-success first">
