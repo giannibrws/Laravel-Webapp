@@ -8,6 +8,7 @@
 <div class="col-6 offset-md-3">
   <div class="card">
     <div class="card-header">Edit contact</div>
+     <div class="error">{{isset($error) ? $error : ''}}</div>
     <div class="card-body">
     <form method="POST" action="{{ action('UserController@update', $user->id )}}">
         {{--// Define hidden input method: --}}

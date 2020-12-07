@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
 // Include global DB class:
 use DB;
 use Auth;
+use Mockery\Exception;
 
 class UserController extends Controller
 {
@@ -40,6 +45,20 @@ class UserController extends Controller
     // @info: Saves a new user record to the database:
     public function store()
     {
+        try{
+            if(!filter_var(request('email'), FILTER_VALIDATE_EMAIL)){
+                throw new Exception('Error: Invalid email adress - please try again');
+            }
+
+            $emailExists = User::where('email','like','%'.request('email').'%') -> first();
+            if ($emailExists !== null) {
+                throw new Exception('Error: This email has already been taken.');
+            }
+
+          } catch (Exception $error){
+            return view('createcard')->with('error', $error->getMessage());
+        }
+
         $user = new User();
         $user->email = request('email');
         $user->name = request('name');
@@ -54,7 +73,6 @@ class UserController extends Controller
 
     /**
      * Display the specified resource.
-     *
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
@@ -79,8 +97,22 @@ class UserController extends Controller
 
     public function update($id)
     {
+
         // check om welke user het gaat:
         $user = User::find($id);
+
+        try{
+            if(!filter_var(request('email'), FILTER_VALIDATE_EMAIL)){
+                throw new Exception('Error: Invalid email adress - please try again');
+            }
+            $emailExists = User::where('email','like','%'.request('email').'%') ->first();
+            if ($emailExists !== null && ($user->email !== request('email'))) {
+                throw new Exception('Error: This email has already been taken.');
+            }
+
+        } catch (Exception $error){
+            return view('editcard',['user' => $user, 'error' => $error->getMessage()]);
+        }
 
         // request change of details:
         $user->email = request('email');
@@ -99,5 +131,10 @@ class UserController extends Controller
         User::find($id)->delete();
         // return to home index action:
         return redirect()->action('UserController@index');
+    }
+
+    public function validateUserInfo($id)
+    {
+
     }
 }

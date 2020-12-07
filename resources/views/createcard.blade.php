@@ -4,10 +4,12 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}" >
 @endsection
 
+
 @section('content')
 <div class="col-6 offset-md-3">
   <div class="card">
     <div class="card-header">Create contact</div>
+      <div class="error">{{isset($error) ? $error : ''}}</div>
     <div class="card-body">
     <form method="POST" action="{{ action('UserController@store') }}">
         {{--// Add validation token to form--}}
