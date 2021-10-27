@@ -1,12 +1,5 @@
 <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Logo.min.svg/2560px-Logo.min.svg.png" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework">test123</a>
-<a href="https://packagist.org/packages/laravel/framework">test123</a>
-<a href="https://packagist.org/packages/laravel/framework"></a>
-<a href="https://packagist.org/packages/laravel/framework"></a>
-</p>
-
 ## Laravel Contact manager.
 
 A simple CRUD application for managing contacts.  
